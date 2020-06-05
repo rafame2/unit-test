@@ -17,10 +17,11 @@ This test consists of a simple CRUD application using material components to per
 * New operations (to list, add, update and remove categories) must be implemented on a new Service which will consume APIService
 * Backend service specification:
 
-URL: https://apidev.plataformaunit.com.br/v1/category
-Operations available:
-* GET / list all available categories
-* GET /{id} obtains the category identified by the specified category {id}
-* GET /slug/{slug} obtains the category identified by the specified category {slug}
-* POST / adds or updates a category (**must** receive a Category object as post data)
+> URL: https://apidev.plataformaunit.com.br/v1/category
+
+> Operations available:
+> * GET / list all available categories
+> * GET /{id} obtains the category identified by the specified category {id}
+> * GET /slug/{slug} obtains the category identified by the specified category {slug}
+> * POST / adds or updates a category (**must** receive a Category object as post data)
 
