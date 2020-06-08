@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { APIService } from 'src/app/services/api.service';
+import { Category } from 'src/app/model/category';
 
 @Component({
   selector: 'app-table',
@@ -16,7 +17,7 @@ export class TableComponent implements OnInit {
   @ViewChild('dialogCancel') public dialogCancel: TemplateRef<any>;
   @ViewChild('dialogEdit') public dialogEdit: TemplateRef<any>;
   @Input() dataSource;
-  data; 
+  data = new Category; 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;  
     this.dataSource.sort = this.sort;  
@@ -27,21 +28,22 @@ export class TableComponent implements OnInit {
   openDialogEdit(el) {    
     this.data = Object.assign({}, el);    
     const dialogRef = this.dialog.open(this.dialogEdit);
-    dialogRef.afterClosed().subscribe(result => {      
+    dialogRef.afterClosed().subscribe(result => {    
+        
       if (result)
-        this.apiService.post('category', result).subscribe(el => this.updateDatas())
+        this.apiService.post('category', result).subscribe(el => this.updateData())
     })
   }
 
   openDialogCancel(id) {    
     const dialogRef = this.dialog.open(this.dialogCancel);
     dialogRef.afterClosed().subscribe(result => {
-      if(result) this.apiService.delete('category', id).toPromise().then(x => this.updateDatas())
+      if(result) this.apiService.delete('category', id).toPromise().then(x => this.updateData())
     });
 
   }
 
-  updateDatas() {
+  updateData() {
     this.apiService.get('category').subscribe(data => this.dataSource.data = data)
   }
 
