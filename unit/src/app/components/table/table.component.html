@@ -68,37 +68,31 @@
       <p>
         <mat-form-field appearance="fill" aria-disabled="">
           <mat-label>Id</mat-label>
-          <input matInput disabled value="{{element.id}}">
+          <input matInput disabled value="{{data.id}}">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
           <mat-label>Title</mat-label>
-          <input matInput [value]="element.title" [(ngModel)]="element.title" name="title">
+          <input matInput [value]="data.title" [(ngModel)]="data.title" name="title">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
           <mat-label>Description</mat-label>
-          <input matInput [value]="element.description" [(ngModel)]="element.description" name="description">
+          <input matInput [value]="data.description" [(ngModel)]="data.description" name="description">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="fill">
           <mat-label>Slug</mat-label>
-          <input matInput [value]="element.slug" [(ngModel)]="element.slug" name="slug">
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="fill">
-          <mat-label>Parent Id</mat-label>
-          <input matInput [value]="element.parent ? element.parent.id : ''"  [(ngModel)]="element.parent" name="parent">
+          <input matInput [value]="data.slug" [(ngModel)]="data.slug" name="slug">
         </mat-form-field>
       </p>
     </form> 
   </div>
   <div mat-dialog-actions>
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="element" cdkFocusInitial>Edit</button>
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
   </div>
 </ng-template>

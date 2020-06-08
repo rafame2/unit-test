@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { APIService } from 'src/app/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Category } from 'src/app/interface/category';
 
 
 @Component({
@@ -13,6 +12,6 @@ export class HomeComponent {
   dataSource = new MatTableDataSource()
 
   constructor(private apiService: APIService) {
-    this.apiService.get('category').subscribe((data: Category[]) =>  this.dataSource.data = data )
+    this.apiService.get('category').subscribe((data: []) =>  this.dataSource.data = data )
   }
 }
