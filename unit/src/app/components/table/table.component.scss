@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+
+    .mat-header-cell {
+        text-align: center;
+    }
+    
+    .mat-table-sticky:last-child {
+        width: 130px;
+        text-align: center;
+        border-left: 1px solid #e0e0e0;
+    }
+}
+
