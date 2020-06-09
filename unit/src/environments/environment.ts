@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://apidev.plataformaunit.com.br/'
+  apiUrl: 'https://apidev.plataformaunit.com.br'
 };
 
 /*
